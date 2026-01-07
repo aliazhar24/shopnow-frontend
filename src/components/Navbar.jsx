@@ -60,9 +60,9 @@ const Navbar = () => {
 
     {/* CENTER NAV - DESKTOP ONLY */}
     <div className="hidden md:flex gap-8 font-medium text-base">
-      <Link to="/category/men" className="hover:text-pink-600 font-semibold">Men</Link>
-      <Link to="/category/women" className="hover:text-pink-600 font-semibold">Women</Link>
-      <Link to="/category/kids" className="hover:text-pink-600 font-semibold">Kids</Link>
+      <Link to="/category/men" className="hover:text-gray-700 font-semibold">Men</Link>
+      <Link to="/category/women" className="hover:text-gray-700 font-semibold">Women</Link>
+      <Link to="/category/kids" className="hover:text-gray-700 font-semibold">Kids</Link>
     </div>
 
     {/* ICONS */}

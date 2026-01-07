@@ -95,7 +95,7 @@ const handleAddToCart = async (e) => {
         <p className="font-semibold mb-2 text-sm md:text-base">Select Size</p>
 
         <div className="grid grid-cols-4 gap-2">
-          {["XS", "S", "M", "L"].map((size) => (
+          {["S", "M", "L", "XL", ].map((size) => (
             <button
               key={size}
               onClick={() => setSelectedSize(size)}
