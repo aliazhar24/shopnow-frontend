@@ -80,7 +80,7 @@ const AdminProducts = () => {
   return (
     <div className="w-full">
 
-      <h1 className="text-xl sm:text-2xl font-bold mb-6">📦 Manage Products</h1>
+      <h1 className="text-lg sm:text-2xl font-bold mb-4 sm:mb-6">📦 Manage Products</h1>
 
       {/* ==================== FORM ==================== */}
       <form
@@ -159,43 +159,55 @@ const AdminProducts = () => {
 
       {/* ==================== TABLE ==================== */}
       <div className="overflow-x-auto">
-        <table className="min-w-full bg-white rounded-lg shadow text-sm sm:text-base">
+        <table className="w-full bg-white rounded-lg shadow text-sm sm:text-base">
           <thead className="bg-gray-100 text-left">
-            <tr>
-              <th className="p-3">Name</th>
-              <th className="p-3">Price</th>
-              <th className="p-3">Category</th>
-              <th className="p-3">Stock</th>
-              <th className="p-3">Trending</th>
-              <th className="p-3 text-center">Actions</th>
-            </tr>
-          </thead>
+  <tr>
+    <th className="p-2 sm:p-3">Name</th>
+    <th className="p-2 sm:p-3">Price</th>
+    <th className="p-2 sm:p-3 hidden sm:table-cell">Category</th>
+    <th className="p-2 sm:p-3 hidden sm:table-cell">Stock</th>
+    <th className="p-2 sm:p-3 hidden sm:table-cell">Trending</th>
+    <th className="p-2 sm:p-3 text-center">Actions</th>
+  </tr>
+</thead>
 
-          <tbody>
-            {products.map((p) => (
-              <tr key={p._id} className="border-t hover:bg-gray-50">
-                <td className="p-3">{p.name}</td>
-                <td className="p-3">₹{p.price}</td>
-                <td className="p-3 capitalize">{p.category}</td>
-                <td className="p-3">{p.stock}</td>
-                <td className="p-3 text-center">{p.isTrending ? "🔥" : "—"}</td>
-                <td className="p-3 flex justify-center gap-3 flex-wrap">
-                  <button
-                    onClick={() => handleEdit(p)}
-                    className="text-blue-600 hover:underline"
-                  >
-                    Edit
-                  </button>
-                  <button
-                    onClick={() => handleDelete(p._id)}
-                    className="text-red-600 hover:underline"
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
+
+        <tbody>
+  {products.map((p) => (
+    <tr key={p._id} className="border-t hover:bg-gray-50">
+      <td className="p-2 sm:p-3">{p.name}</td>
+      <td className="p-2 sm:p-3">₹{p.price}</td>
+
+      <td className="p-2 sm:p-3 hidden sm:table-cell capitalize">
+        {p.category}
+      </td>
+
+      <td className="p-2 sm:p-3 hidden sm:table-cell">
+        {p.stock}
+      </td>
+
+      <td className="p-2 sm:p-3 hidden sm:table-cell text-center">
+        {p.isTrending ? "🔥" : "—"}
+      </td>
+
+      <td className="p-2 sm:p-3 flex flex-col sm:flex-row justify-center gap-2">
+        <button
+          onClick={() => handleEdit(p)}
+          className="text-blue-600 hover:underline"
+        >
+          Edit
+        </button>
+        <button
+          onClick={() => handleDelete(p._id)}
+          className="text-red-600 hover:underline"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  ))}
+</tbody>
+
         </table>
       </div>
 

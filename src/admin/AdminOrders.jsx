@@ -28,7 +28,7 @@ const AdminOrders = () => {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-6">Orders</h1>
+      <h1 className="text-xl sm:text-xl md:text-2xl font-bold mb-6 flex items-center gap-2">Orders</h1>
 
       <div className="space-y-4">
         {orders.map((order) => (
